@@ -1,2 +1,6 @@
 TechVision
+<<<<<<< HEAD
+---
+=======
 +++
+>>>>>>> theano
