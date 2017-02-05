@@ -8,8 +8,6 @@
  + [Установка OpenCV](#openCV)
    + [Linux(Ubuntu)](#lin_opencv)
    + [Windows](#WinCV)
-+ [Скользящее окно](#slidingWindow)
-+ [Демо пример](#demo)
 
 # <a name="install"></a> Установка и настройка
 
@@ -99,19 +97,29 @@ Linux (Ubuntu)
 
 
 ### <a name="lin_opencv"></a> Linux(Ubuntu)
+Готови систему (копируем целый блок):
+
+    sudo apt-get install build-essential &&
+    sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev &&
+    sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+
 Открываем [оф. сайт OpenCV](http://opencv.org/downloads.html)
-и выбираем версию 3.2. Скачиваем.
+и выбираем версию 3.2 или последнюю версию:
+
+    cd ~/<my_working _directory>
+    git clone https://github.com/opencv/opencv.git
 
 Переходим в каталог куда скачали распаковываем например в
 
     /home/user/
 После распаковки выполняем
 
-    cd ~/opencv && mkdir build && cd build
+    cd ~/opencv && mkdir release && cd build
 Затем:
 
+    cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+
+    make -j12
+    sudo make install
+
 ### <a name="WinCV"></a> Windows
-
-### <a name="slidingWindow"></a> Скользящее окно
-
-### <a name="demo"></a> Пример
