@@ -29,6 +29,7 @@ class SlidingWindow:
         :param detect: detection function
         :return: void.
         '''
+
         self.detect = detect
 
     def _solve_first_position(self, _w, w_img):
